@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  background: #f6fcf8;
+  color: #064e3b;
+}
+
+.bg-emerald-pattern {
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.1) 0 10%, transparent 35%),
+    radial-gradient(circle at 90% 25%, rgba(5, 150, 105, 0.08) 0 13%, transparent 32%),
+    linear-gradient(180deg, #f6fcf8 0%, #ecfdf5 55%, #f8fffb 100%);
+}
+
+.hero-glow {
+  position: absolute;
+  right: -100px;
+  top: -120px;
+  width: 330px;
+  height: 330px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0) 65%);
+  filter: blur(3px);
+}
+
+.section-tag {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid rgb(167 243 208 / 1);
+  background: rgb(255 255 255 / 0.85);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(6 95 70 / 1);
+}
+
+.section-title {
+  margin-top: 0.85rem;
+  font-size: clamp(1.7rem, 3.2vw, 2.65rem);
+  font-weight: 900;
+  line-height: 1.12;
+  color: rgb(2 44 34 / 1);
+}
+
+.card {
+  border-radius: 1.2rem;
+  border: 1px solid rgb(209 250 229 / 1);
+  background: rgb(255 255 255 / 0.94);
+  box-shadow: 0 10px 30px -22px rgba(4, 120, 87, 0.55);
+}
+
+.swiper-nav {
+  position: absolute;
+  top: 43%;
+  z-index: 10;
+  display: none;
+  height: 2.6rem;
+  width: 2.6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgb(167 243 208 / 1);
+  background: rgb(255 255 255 / 0.92);
+  font-size: 1.5rem;
+  color: rgb(5 150 105 / 1);
+  transition: all 180ms ease;
+}
+
+.swiper-nav:hover {
+  transform: translateY(-1px);
+  background: rgb(236 253 245 / 1);
+}
+
+.swiper .swiper-slide {
+  height: auto;
+}
+
+.swiper .swiper-slide > * {
+  height: 100%;
+}
+
+.swiper .swiper-pagination-bullet {
+  width: 0.6rem;
+  height: 0.6rem;
+  background: rgb(167 243 208 / 1);
+  opacity: 1;
+}
+
+.swiper .swiper-pagination-bullet-active {
+  background: rgb(5 150 105 / 1);
+}
+
+@media (min-width: 640px) {
+  .swiper-nav {
+    display: inline-flex;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
