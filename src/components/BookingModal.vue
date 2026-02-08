@@ -1,16 +1,62 @@
 <script setup>
+import { onBeforeUnmount, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { destinations } from '../data/content'
 import { useBookingModal } from '../composables/useBookingModal'
+import { hasTelegramConfig, sendTelegramBooking } from '../services/telegram'
 
 const {
   isBookingOpen,
   bookingForm,
   closeBookingModal,
-  submitBooking,
 } = useBookingModal()
 
 const { t } = useI18n()
+const isSending = ref(false)
+const formError = ref('')
+const showToast = ref(false)
+let toastTimer = null
+
+function resetForm() {
+  bookingForm.fullName = ''
+  bookingForm.phone = ''
+  bookingForm.note = ''
+  bookingForm.tour = destinations[0]?.titleKey || ''
+}
+
+async function handleSubmit() {
+  formError.value = ''
+
+  if (!hasTelegramConfig()) {
+    formError.value = t('modal.configMissing')
+    return
+  }
+
+  isSending.value = true
+  try {
+    await sendTelegramBooking({
+      fullName: bookingForm.fullName,
+      phone: bookingForm.phone,
+      tour: t(bookingForm.tour),
+      note: bookingForm.note,
+    })
+    showToast.value = true
+    if (toastTimer) clearTimeout(toastTimer)
+    toastTimer = setTimeout(() => {
+      showToast.value = false
+    }, 3000)
+    resetForm()
+    closeBookingModal()
+  } catch {
+    formError.value = t('modal.error')
+  } finally {
+    isSending.value = false
+  }
+}
+
+onBeforeUnmount(() => {
+  if (toastTimer) clearTimeout(toastTimer)
+})
 </script>
 
 <template>
@@ -35,7 +81,7 @@ const { t } = useI18n()
         </button>
       </div>
 
-      <form class="space-y-4" @submit.prevent="submitBooking">
+      <form class="space-y-4" @submit.prevent="handleSubmit">
         <div>
           <label for="fullName" class="mb-1 block text-sm font-semibold text-emerald-900">{{ t('modal.fullName') }}</label>
           <input
@@ -91,11 +137,22 @@ const { t } = useI18n()
 
         <button
           type="submit"
+          :disabled="isSending"
           class="w-full rounded-xl bg-emerald-600 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-500"
+          :class="isSending ? 'cursor-not-allowed opacity-70' : ''"
         >
-          {{ t('modal.submit') }}
+          {{ isSending ? t('modal.sending') : t('modal.submit') }}
         </button>
+
+        <p v-if="formError" class="text-sm font-semibold text-red-600">{{ formError }}</p>
       </form>
     </div>
+  </div>
+
+  <div
+    v-if="showToast"
+    class="fixed right-4 top-4 z-[70] rounded-xl border border-emerald-200 bg-white px-4 py-3 text-sm font-semibold text-emerald-800 shadow-xl"
+  >
+    {{ t('modal.successToast') }}
   </div>
 </template>

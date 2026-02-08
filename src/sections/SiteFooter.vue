@@ -22,6 +22,26 @@ const localizedLinks = computed(() =>
           <p class="mt-3 text-sm leading-6 text-emerald-800/85">
             {{ t('footer.description') }}
           </p>
+          <a
+            href="/license.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-4 inline-flex rounded-xl border border-emerald-200 bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-emerald-700 transition hover:border-emerald-300 hover:bg-emerald-50"
+          >
+            {{ t('footer.license') }}
+          </a>
+          <a
+            href="/license.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-3 block overflow-hidden rounded-2xl border border-emerald-100 bg-white"
+          >
+            <iframe
+              src="/license.pdf#toolbar=0&navpanes=0&scrollbar=0&page=1"
+              class="h-48 w-full"
+              title="License preview"
+            />
+          </a>
         </div>
 
         <div>
@@ -41,9 +61,13 @@ const localizedLinks = computed(() =>
         <div>
           <p class="text-sm font-extrabold text-emerald-900">{{ t('footer.contact') }}</p>
           <div class="mt-3 space-y-2 text-sm text-emerald-800/90">
-            <p>{{ t('footer.phone') }}: +998 90 123 45 67</p>
-            <p>{{ t('footer.telegram') }}: @greatprestigetour</p>
-            <p>{{ t('footer.email') }}: info@greatprestigetour.uz</p>
+            <p>{{ t('footer.phone') }}:</p>
+            <a class="block font-semibold text-emerald-700 hover:text-emerald-500" href="tel:+998701049999">
+              +998 70 104 99 99
+            </a>
+            <a class="block font-semibold text-emerald-700 hover:text-emerald-500" href="tel:+998775249999">
+              +998 77 524 99 99
+            </a>
           </div>
           <a
             href="#home"

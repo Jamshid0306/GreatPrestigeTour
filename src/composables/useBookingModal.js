@@ -19,16 +19,11 @@ function closeBookingModal() {
   isBookingOpen.value = false
 }
 
-function submitBooking() {
-  closeBookingModal()
-}
-
 export function useBookingModal() {
   return {
     isBookingOpen,
     bookingForm,
     openBookingModal,
     closeBookingModal,
-    submitBooking,
   }
 }
