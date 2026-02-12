@@ -18,6 +18,11 @@ export const destinations = [
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/RegistanSquare_Samarkand.jpg',
   },
   {
+    titleKey: 'destinations.items.alBuxoriy.title',
+    infoKey: 'destinations.items.alBuxoriy.info',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/AlBukhari_mausoleum.jpg',
+  },
+  {
     titleKey: 'destinations.items.ichanKala.title',
     infoKey: 'destinations.items.ichanKala.info',
     image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Khiva_2023.10.jpg',

@@ -36,6 +36,10 @@ const messages = {
           title: 'Samarqand - Registon maydoni',
           info: 'Registon maydoni Samarqandning eng mashhur tarixiy markazi bo‘lib, Ulug‘bek, Sherdor va Tillakori madrasalari bilan tanilgan. Bu yerda Temuriylar davri meʼmorchiligi, nafis koshinkor bezaklar va sharqona ilm-fan ruhi yaqqol seziladi.',
         },
+        alBuxoriy: {
+          title: 'Samarqand - Imom al-Buxoriy majmuasi',
+          info: 'Imom al-Buxoriy majmuasi islom olamining buyuk muhaddisi xotirasiga bag‘ishlangan muqaddas maskan hisoblanadi. Majmua ziyorat turizmi, diniy-maʼrifiy meros va zamonaviy meʼmoriy yechimlarni birlashtiradi.',
+        },
         ichanKala: {
           title: 'Xorazm - Ichan Qalʼa',
           info: 'Ichan Qalʼa Xivaning qadimiy ichki shahri bo‘lib, UNESCO merosi ro‘yxatiga kiritilgan. Mustahkam devorlar, minoralar, madrasa va saroylar o‘tmishdagi Xorazm sivilizatsiyasi hayotini jonli tarzda namoyon etadi.',
@@ -165,6 +169,10 @@ const messages = {
           title: 'Самарканд - площадь Регистан',
           info: 'Площадь Регистан является самым известным историческим центром Самарканда с медресе Улугбека, Шердор и Тилля-Кари. Здесь ярко ощущаются архитектура эпохи Тимуридов и утонченная восточная мозаика.',
         },
+        alBuxoriy: {
+          title: 'Самарканд - комплекс Имама аль-Бухари',
+          info: 'Комплекс Имама аль-Бухари является священным местом, посвященным памяти великого исламского ученого-хадисоведа. Он объединяет паломнический туризм, духовно-просветительское наследие и современную архитектуру.',
+        },
         ichanKala: {
           title: 'Хорезм - Ичан-Кала',
           info: 'Ичан-Кала - древний внутренний город Хивы, включенный в список Всемирного наследия ЮНЕСКО. Крепостные стены, минареты, медресе и дворцы наглядно показывают историю цивилизации Хорезма.',
@@ -293,6 +301,10 @@ const messages = {
         registan: {
           title: 'Samarkand - Registan Square',
           info: 'Registan Square is the most iconic historical center of Samarkand, featuring the Ulugh Beg, Sher-Dor, and Tillya-Kori madrasas. It highlights Timurid architecture, intricate tilework, and a rich scholarly heritage.',
+        },
+        alBuxoriy: {
+          title: 'Samarkand - Imam al-Bukhari Complex',
+          info: 'The Imam al-Bukhari complex is a sacred site dedicated to the memory of one of the greatest scholars of hadith in the Islamic world. It combines pilgrimage tourism, spiritual heritage, and contemporary architecture.',
         },
         ichanKala: {
           title: 'Khorezm - Ichan Kala',
