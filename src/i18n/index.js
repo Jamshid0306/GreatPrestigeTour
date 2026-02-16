@@ -31,6 +31,8 @@ const messages = {
       tag: "O'zbekiston merosi",
       title: "Tarixiy obidalar bo'ylab sayohat",
       book: 'Band qilish',
+      watch: "Videoni ko'rish",
+      videoUnavailable: 'Video mavjud emas.',
       items: {
         registan: {
           title: 'Samarqand - Registon maydoni',
@@ -164,6 +166,8 @@ const messages = {
       tag: 'Наследие Узбекистана',
       title: 'Путешествие по историческим памятникам',
       book: 'Бронь',
+      watch: 'Смотреть видео',
+      videoUnavailable: 'Видео недоступно.',
       items: {
         registan: {
           title: 'Самарканд - площадь Регистан',
@@ -297,6 +301,8 @@ const messages = {
       tag: 'Uzbekistan Heritage',
       title: 'Journey Through Historical Landmarks',
       book: 'Book now',
+      watch: 'Watch video',
+      videoUnavailable: 'Video is unavailable.',
       items: {
         registan: {
           title: 'Samarkand - Registan Square',
